@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TodoWrapper = styled.div`
+const TodoWrapper = styled.li`
 	display: flex;
 `;
 
-const TodoLi = styled.li`
-	list-style: none;
-`;
+const TodoText = styled.p``;
 
 const Todo = ({ todos, setTodos, todo }) => {
 	const completeTodoHandler = () => {
@@ -31,7 +29,7 @@ const Todo = ({ todos, setTodos, todo }) => {
 	return (
 		<TodoWrapper>
 			<button onClick={completeTodoHandler}>Completed</button>
-			<TodoLi>{todo.text}</TodoLi>
+			<TodoText>{todo.text}</TodoText>
 			<button onClick={deleteTodoHandler}>Delete</button>
 		</TodoWrapper>
 	);
