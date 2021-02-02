@@ -1,11 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const TodoWrapper = styled.li`
 	display: flex;
 `;
 
-const TodoText = styled.p``;
+const TodoText = styled.p`
+	${p =>
+		p.completed &&
+		css`
+			text-decoration: line-through;
+		`};
+`;
 
 const Todo = ({ todos, setTodos, todo }) => {
 	const completeTodoHandler = () => {
@@ -29,7 +35,7 @@ const Todo = ({ todos, setTodos, todo }) => {
 	return (
 		<TodoWrapper>
 			<button onClick={completeTodoHandler}>Completed</button>
-			<TodoText>{todo.text}</TodoText>
+			<TodoText completed={todo.completed}>{todo.text}</TodoText>
 			<button onClick={deleteTodoHandler}>Delete</button>
 		</TodoWrapper>
 	);

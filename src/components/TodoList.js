@@ -3,7 +3,9 @@ import Todo from './Todo';
 
 const TodoList = ({ todos, setTodos, filteredTodos }) => {
 	const renderedTodos = filteredTodos.map(todo => {
-		return <Todo todos={todos} setTodos={setTodos} todo={todo} />;
+		return (
+			<Todo todos={todos} setTodos={setTodos} todo={todo} key={todo.id} />
+		);
 	});
 
 	return (
