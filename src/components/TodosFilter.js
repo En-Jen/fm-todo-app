@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import FilterButtons from './FilterButtons';
+import useViewport from '../hooks/useViewport';
 
 const FilterWrapper = styled.div`
 	display: flex;
@@ -8,28 +10,26 @@ const FilterWrapper = styled.div`
 const TodosFilter = ({ todos, setTodos, setFilterOption }) => {
 	const uncompletedTodos = todos.filter(todo => todo.completed === false);
 
-	const filterHandler = e => {
-		setFilterOption(e.target.dataset.option);
-	};
+	const { width } = useViewport();
+	const breakpoint = 768;
 
 	const clearCompletedHandler = () => {
 		setTodos(todos.filter(todo => todo.completed === false));
 	};
 
 	return (
-		<FilterWrapper>
-			<p>{uncompletedTodos.length} items left</p>
-			<button onClick={filterHandler} data-option="all">
-				All
-			</button>
-			<button onClick={filterHandler} data-option="active">
-				Active
-			</button>
-			<button onClick={filterHandler} data-option="completed">
-				Completed
-			</button>
-			<button onClick={clearCompletedHandler}>Clear Completed</button>
-		</FilterWrapper>
+		<>
+			<FilterWrapper>
+				<p>{uncompletedTodos.length} items left</p>
+				{width >= breakpoint && (
+					<FilterButtons setFilterOption={setFilterOption} />
+				)}
+				<button onClick={clearCompletedHandler}>Clear Completed</button>
+			</FilterWrapper>
+			{width < breakpoint && (
+				<FilterButtons setFilterOption={setFilterOption} />
+			)}
+		</>
 	);
 };
 
