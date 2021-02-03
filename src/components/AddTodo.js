@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 	const inputTextHandler = e => {
 		setInputText(e.target.value);
 	};
@@ -29,4 +29,4 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
 	);
 };
 
-export default Form;
+export default AddTodo;

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
-import Form from './components/Form';
+import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import TodosFilter from './components/TodosFilter';
+import DarkTheme from './themes/dark';
 
 const GlobalStyle = createGlobalStyle`
 	*,
@@ -29,8 +30,8 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: 'Josefin Sans', sans-serif;
 		width: 100vw;
-		background-color: ${p => (p.theme.mode === 'dark' ? 'black' : 'white')};
-		color: ${p => (p.theme.mode === 'dark' ? 'white' : 'black')};
+		background-color: ${p => p.theme.bodyBg};
+		color: ${p => p.theme.uncompletedTodoText};
 	}
 `;
 
@@ -72,7 +73,7 @@ const App = () => {
 	const [todos, setTodos] = useState(initialTodos);
 	const [filterOption, setFilterOption] = useState('all');
 	const [filteredTodos, setFilteredTodos] = useState([]);
-	const [theme, setTheme] = useState({ mode: 'dark' });
+	const [theme, setTheme] = useState(DarkTheme);
 
 	// Run every time user adds another todo or selects a different filterOption
 	useEffect(() => {
@@ -99,7 +100,7 @@ const App = () => {
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Header theme={theme} setTheme={setTheme} />
-			<Form
+			<AddTodo
 				todos={todos}
 				setTodos={setTodos}
 				inputText={inputText}
