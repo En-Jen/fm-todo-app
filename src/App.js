@@ -4,6 +4,7 @@ import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import TodosFilter from './components/TodosFilter';
+import Main from './components/Main';
 import DarkTheme from './themes/dark';
 
 const GlobalStyle = createGlobalStyle`
@@ -100,22 +101,24 @@ const App = () => {
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Header theme={theme} setTheme={setTheme} />
-			<AddTodo
-				todos={todos}
-				setTodos={setTodos}
-				inputText={inputText}
-				setInputText={setInputText}
-			/>
-			<TodoList
-				todos={todos}
-				setTodos={setTodos}
-				filteredTodos={filteredTodos}
-			/>
-			<TodosFilter
-				todos={todos}
-				setTodos={setTodos}
-				setFilterOption={setFilterOption}
-			/>
+			<Main>
+				<AddTodo
+					todos={todos}
+					setTodos={setTodos}
+					inputText={inputText}
+					setInputText={setInputText}
+				/>
+				<TodoList
+					todos={todos}
+					setTodos={setTodos}
+					filteredTodos={filteredTodos}
+				/>
+				<TodosFilter
+					todos={todos}
+					setTodos={setTodos}
+					setFilterOption={setFilterOption}
+				/>
+			</Main>
 		</ThemeProvider>
 	);
 };

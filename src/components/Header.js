@@ -8,6 +8,8 @@ const StyledHeader = styled.header`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-image: ${p => p.theme.bgImgMobile};
+	display: flex;
+	justify-content: center;
 
 	@media (min-width: 768px) {
 		height: 30rem;
@@ -15,10 +17,21 @@ const StyledHeader = styled.header`
 	}
 `;
 
+const HeaderWrapper = styled.div`
+	width: 100%;
+	height: 40px;
+	max-width: 54rem;
+	padding: 2.4rem;
+	margin-top: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+`;
+
 const Heading = styled.h1`
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 4rem;
+	font-size: 2rem;
 	font-weight: 700;
 	letter-spacing: 1.5rem;
 `;
@@ -26,10 +39,10 @@ const Heading = styled.h1`
 const Header = ({ theme, setTheme }) => {
 	return (
 		<StyledHeader>
-			<div>
+			<HeaderWrapper>
 				<Heading>Todo</Heading>
 				<ThemeToggler theme={theme} setTheme={setTheme} />
-			</div>
+			</HeaderWrapper>
 		</StyledHeader>
 	);
 };
