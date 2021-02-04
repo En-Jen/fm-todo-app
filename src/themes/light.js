@@ -11,6 +11,8 @@ const theme = {
 	uncompletedTodoText: '#494C6B',
 	filterText: '#9495A5',
 	activeFilterText: '#3A7CFD',
+    todoBorder: '1px solid #E3E4F1',
+	boxShadow: '0 35px 50px -15px rgba(194,195,214,0.5);',
 	bgImgMobile: `url(${BgMobileLight})`,
 	bgImgDesktop: `url(${BgDesktopLight})`,
 };

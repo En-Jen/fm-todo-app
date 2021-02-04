@@ -5,7 +5,7 @@ const InputBox = styled.div`
 	margin-top: -11rem;
 `;
 
-const TodoInput = styled.input`
+export const TodoInput = styled.input`
 	background-color: ${p => p.theme.todoBg};
 	border-radius: 5px;
 	width: 100%;
@@ -16,13 +16,17 @@ const TodoInput = styled.input`
 	font-size: var(--font-size-primary);
 	color: ${p => p.theme.newTodoTypingText};
 	caret-color: ${p => p.theme.activeFilterText};
+	box-shadow: ${p => p.theme.boxShadow};
+	display: flex;
+	align-items: center;
+	padding: 2rem;
 
 	&::placeholder {
 		color: ${p => p.theme.newTodoPlaceholderText};
 	}
 `;
 
-const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
+export const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 	const inputTextHandler = e => {
 		setInputText(e.target.value);
 	};
@@ -53,5 +57,3 @@ const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 		</InputBox>
 	);
 };
-
-export default AddTodo;

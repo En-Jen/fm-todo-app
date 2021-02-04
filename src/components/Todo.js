@@ -1,15 +1,35 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { TodoInput } from './AddTodo';
+import { CircleCheckbox } from './CircleCheckbox';
 
-const TodoWrapper = styled.li`
-	display: flex;
+const TodoWrapper = styled(TodoInput)`
+	box-shadow: none;
+	border-radius: 0;
+
+	&:not(:last-child) {
+		border-bottom: ${p => p.theme.todoBorder};
+	}
+
+	&:first-child {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	&:last-child {
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
 `;
 
 const TodoText = styled.p`
+	color: ${p => p.theme.uncompletedTodoText};
+
 	${p =>
 		p.completed &&
 		css`
 			text-decoration: line-through;
+			color: ${p => p.theme.completedTodoText};
 		`};
 `;
 
@@ -33,8 +53,8 @@ const Todo = ({ todos, setTodos, todo }) => {
 	};
 
 	return (
-		<TodoWrapper>
-			<button onClick={completeTodoHandler}>Completed</button>
+		<TodoWrapper as="li">
+			<CircleCheckbox onClick={completeTodoHandler} />
 			<TodoText completed={todo.completed}>{todo.text}</TodoText>
 			<button onClick={deleteTodoHandler}>Delete</button>
 		</TodoWrapper>

@@ -1,5 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import Todo from './Todo';
+
+const TodoListContainer = styled.div`
+	margin-top: 2rem;
+`;
 
 const TodoList = ({ todos, setTodos, filteredTodos }) => {
 	const renderedTodos = filteredTodos.map(todo => {
@@ -9,9 +14,9 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => {
 	});
 
 	return (
-		<div>
+		<TodoListContainer>
 			<ul>{renderedTodos}</ul>
-		</div>
+		</TodoListContainer>
 	);
 };
 

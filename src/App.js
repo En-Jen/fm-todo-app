@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
-import AddTodo from './components/AddTodo';
+import { AddTodo } from './components/AddTodo';
 import TodoList from './components/TodoList';
 import TodosFilter from './components/TodosFilter';
 import Main from './components/Main';
