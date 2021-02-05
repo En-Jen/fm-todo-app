@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
 		--font-size-primary: 1.2rem;
 		--font-size-secondary: 1.4rem;
+		--transition: 0.3s ease-in-out;
 
 		@media (min-width: 768px) {
 			--font-size-primary: 1.8rem
@@ -116,6 +117,7 @@ const App = () => {
 				<TodosFilter
 					todos={todos}
 					setTodos={setTodos}
+					filterOption={filterOption}
 					setFilterOption={setFilterOption}
 				/>
 			</Main>

@@ -1,23 +1,67 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
+import { TodoInput } from './AddTodo';
 
-const FilterButtons = ({ setFilterOption }) => {
+const FilterButtonWrapper = styled(TodoInput)`
+	justify-content: center;
+`;
+
+export const FilterButton = styled.button`
+	font-size: var(--font-size-secondary);
+	color: ${p => p.theme.filterText};
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+	transition: color var(--transition);
+
+	${p =>
+		p.filterOption === p.filterType &&
+		css`
+			color: ${p => p.theme.activeFilterText};
+		`};
+
+	&:nth-child(2) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
+	&:hover {
+		color: ${p => p.theme.filterTextHover};
+	}
+`;
+
+export const FilterButtons = ({ filterOption, setFilterOption }) => {
 	const filterHandler = e => {
 		setFilterOption(e.target.dataset.option);
 	};
 
 	return (
-		<div>
-			<button onClick={filterHandler} data-option="all">
+		<FilterButtonWrapper as="div">
+			<FilterButton
+				filterOption={filterOption}
+				onClick={filterHandler}
+				data-option="all"
+				filterType="all"
+			>
 				All
-			</button>
-			<button onClick={filterHandler} data-option="active">
+			</FilterButton>
+			<FilterButton
+				filterOption={filterOption}
+				onClick={filterHandler}
+				data-option="active"
+				filterType="active"
+			>
 				Active
-			</button>
-			<button onClick={filterHandler} data-option="completed">
+			</FilterButton>
+			<FilterButton
+				filterOption={filterOption}
+				onClick={filterHandler}
+				data-option="completed"
+				filterType="completed"
+			>
 				Completed
-			</button>
-		</div>
+			</FilterButton>
+		</FilterButtonWrapper>
 	);
 };
-
-export default FilterButtons;

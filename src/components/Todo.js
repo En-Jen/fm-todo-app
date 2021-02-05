@@ -9,19 +9,11 @@ import IconCheck from '../assets/icon-check.svg';
 const TodoWrapper = styled(TodoInput)`
 	box-shadow: none;
 	border-radius: 0;
-
-	&:not(:last-child) {
-		border-bottom: ${p => p.theme.todoBorder};
-	}
+	border-bottom: ${p => p.theme.todoBorder};
 
 	&:first-child {
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
-	}
-
-	&:last-child {
-		border-bottom-right-radius: 5px;
-		border-bottom-left-radius: 5px;
 	}
 `;
 
@@ -37,6 +29,18 @@ const CircleCheckbox = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: border 0.2s ease, transform 0.2s ease;
+
+	&:hover {
+		border: ${p => p.theme.circleBorderHover};
+		transform: scale(1.1);
+
+		${p =>
+			p.completed &&
+			css`
+				border: none;
+			`};
+	}
 
 	${p =>
 		p.completed &&
