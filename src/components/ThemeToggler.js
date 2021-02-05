@@ -14,6 +14,11 @@ export const ToggleButton = styled.button`
 	outline: none;
 	display: inline-flex;
 
+	@media (min-width: 768px) {
+		width: 2.6rem;
+		height: 2.6rem;
+	}
+
 	> img {
 		display: block;
 		width: 100%;

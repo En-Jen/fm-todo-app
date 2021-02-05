@@ -4,6 +4,8 @@ import Todo from './Todo';
 
 const TodoListContainer = styled.div`
 	margin-top: 2rem;
+	width: 100%;
+	max-width: 54rem;
 `;
 
 const TodoList = ({ todos, setTodos, filteredTodos }) => {

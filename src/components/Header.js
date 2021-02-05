@@ -4,6 +4,7 @@ import { ThemeToggler } from './ThemeToggler';
 
 const StyledHeader = styled.header`
 	height: 20rem;
+	padding: 2.4rem;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -21,11 +22,14 @@ const HeaderWrapper = styled.div`
 	width: 100%;
 	height: 40px;
 	max-width: 54rem;
-	padding: 2.4rem;
-	margin-top: 5rem;
+	margin-top: 2.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media (min-width: 768px) {
+		margin-top: 5rem;
+	}
 `;
 
 const Heading = styled.h1`
@@ -34,6 +38,10 @@ const Heading = styled.h1`
 	font-size: 2rem;
 	font-weight: 700;
 	letter-spacing: 1.5rem;
+
+	@media (min-width: 768px) {
+		font-size: 4rem;
+	}
 `;
 
 const Header = ({ theme, setTheme }) => {

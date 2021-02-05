@@ -1,9 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { TodoInput } from './AddTodo';
+import { InputBox } from './AddTodo';
 
-const FilterButtonWrapper = styled(TodoInput)`
+const FilterButtonWrapper = styled(InputBox)`
 	justify-content: center;
+
+	@media (min-width: 768px) {
+		width: auto;
+	}
 `;
 
 export const FilterButton = styled.button`
@@ -37,7 +41,7 @@ export const FilterButtons = ({ filterOption, setFilterOption }) => {
 	};
 
 	return (
-		<FilterButtonWrapper as="div">
+		<FilterButtonWrapper>
 			<FilterButton
 				filterOption={filterOption}
 				onClick={filterHandler}

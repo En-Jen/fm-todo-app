@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FilterButtons, FilterButton } from './FilterButtons';
 import useViewport from '../hooks/useViewport';
-import { TodoInput } from './AddTodo';
+import { InputBox } from './AddTodo';
 
-const FilterWrapper = styled(TodoInput)`
+const FilterWrapper = styled(InputBox)`
 	border-radius: 0;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -24,10 +24,18 @@ const FilterWrapper = styled(TodoInput)`
 		font-family: 'Josefin Sans', sans-serif;
 		font-size: var(--font-size-primary);
 		transition: color var(--transition);
+
+		@media (min-width: 768px) {
+			font-size: var(--font-size-secondary);
+		}
 	}
 
 	> button:hover {
 		color: ${p => p.theme.filterTextHover};
+	}
+
+	@media (min-width: 768px) {
+		font-size: var(--font-size-secondary);
 	}
 `;
 
@@ -43,7 +51,7 @@ const TodosFilter = ({ todos, setTodos, filterOption, setFilterOption }) => {
 
 	return (
 		<>
-			<FilterWrapper as="div">
+			<FilterWrapper>
 				<p>{uncompletedTodos.length} items left</p>
 				{width >= breakpoint && (
 					<FilterButtons

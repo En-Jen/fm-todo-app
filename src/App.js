@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Josefin Sans', sans-serif;
 		width: 100vw;
 		background-color: ${p => p.theme.bodyBg};
-		color: ${p => p.theme.uncompletedTodoText};
 	}
 `;
 

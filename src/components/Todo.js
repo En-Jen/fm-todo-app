@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { TodoInput } from './AddTodo';
+import { InputBox } from './AddTodo';
 // import { CircleCheckbox } from './CircleCheckbox';
 import IconCross from '../assets/icon-cross.svg';
 import { ToggleButton } from './ThemeToggler';
 import IconCheck from '../assets/icon-check.svg';
 
-const TodoWrapper = styled(TodoInput)`
+const TodoWrapper = styled(InputBox)`
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
@@ -14,6 +14,10 @@ const TodoWrapper = styled(TodoInput)`
 	&:first-child {
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
+	}
+
+	&:hover > .btn-delete {
+		display: inline-flex;
 	}
 `;
 
@@ -72,9 +76,15 @@ const DeleteButton = styled(ToggleButton)`
 	width: 1.18rem;
 	height: 1.18rem;
 	margin-left: auto;
+
+	@media (min-width: 768px) {
+		width: 1.77rem;
+		height: 1.77rem;
+		display: none;
+	}
 `;
 
-const Todo = ({ todos, setTodos, todo }) => {
+export const Todo = ({ todos, setTodos, todo }) => {
 	const completeTodoHandler = () => {
 		setTodos(
 			todos.map(item => {
@@ -102,7 +112,7 @@ const Todo = ({ todos, setTodos, todo }) => {
 				{todo.completed && <img src={IconCheck} alt="Check mark" />}
 			</CircleCheckbox>
 			<TodoText completed={todo.completed}>{todo.text}</TodoText>
-			<DeleteButton onClick={deleteTodoHandler}>
+			<DeleteButton className="btn-delete" onClick={deleteTodoHandler}>
 				<img src={IconCross} alt="Delete button" />
 			</DeleteButton>
 		</TodoWrapper>
