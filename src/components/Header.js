@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ThemeToggler from './ThemeToggler';
+import { ThemeToggler } from './ThemeToggler';
 
 const StyledHeader = styled.header`
 	height: 20rem;

@@ -4,7 +4,8 @@ import BgDesktopDark from '../assets/bg-desktop-dark.jpg';
 const theme = {
 	id: 'dark',
 	todoBg: '#25273D',
-	bodyBg: '#171823',
+    bodyBg: '#171823',
+    circleBg: 'linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%))',
 	newTodoPlaceholderText: '#767992',
 	newTodoTypingText: '#C8CBE7',
 	completedTodoText: '#4D5067',

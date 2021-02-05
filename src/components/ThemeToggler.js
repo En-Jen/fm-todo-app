@@ -5,7 +5,7 @@ import IconMoon from '../assets/icon-moon.svg';
 import LightTheme from '../themes/light';
 import DarkTheme from '../themes/dark';
 
-const ToggleButton = styled.button`
+export const ToggleButton = styled.button`
 	width: 2rem;
 	height: 2rem;
 	background-color: transparent;
@@ -15,11 +15,12 @@ const ToggleButton = styled.button`
 	display: inline-flex;
 
 	> img {
+		display: block;
 		width: 100%;
 	}
 `;
 
-const ThemeToggler = ({ theme, setTheme }) => {
+export const ThemeToggler = ({ theme, setTheme }) => {
 	const themeToggleHandler = () => {
 		setTheme(theme.id === 'light' ? DarkTheme : LightTheme);
 	};
@@ -34,5 +35,3 @@ const ThemeToggler = ({ theme, setTheme }) => {
 		</ToggleButton>
 	);
 };
-
-export default ThemeToggler;

@@ -4,7 +4,8 @@ import BgDesktopLight from '../assets/bg-desktop-light.jpg';
 const theme = {
 	id: 'light',
 	todoBg: '#fff',
-	bodyBg: '#FAFAFA',
+    bodyBg: '#FAFAFA',
+    circleBg: 'linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%))',
 	newTodoPlaceholderText: '#9495A5',
 	newTodoTypingText: '#393A4B',
 	completedTodoText: '#D1D2DA',
