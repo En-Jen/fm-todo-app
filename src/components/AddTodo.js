@@ -1,21 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-export const InputBox = styled.div`
-	width: 100%;
-	max-width: 54rem;
-	background-color: ${p => p.theme.todoBg};
-	border-radius: 5px;
-	height: 4.8rem;
-	box-shadow: ${p => p.theme.boxShadow};
-	display: flex;
-	align-items: center;
-	padding: 2rem;
-
-	@media (min-width: 768px) {
-		height: 6.4rem;
-	}
-`;
+import { ItemBox } from './ItemBox';
 
 const InputCircle = styled.div`
 	width: 2rem;
@@ -42,7 +27,7 @@ const TodoInput = styled.input`
 	}
 `;
 
-export const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
+const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 	const inputTextHandler = e => {
 		setInputText(e.target.value);
 	};
@@ -60,7 +45,7 @@ export const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 	};
 
 	return (
-		<InputBox>
+		<ItemBox>
 			<InputCircle />
 			<TodoInput
 				onKeyDown={submitTodoHandler}
@@ -69,6 +54,8 @@ export const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 				type="text"
 				placeholder="Create a new todo..."
 			/>
-		</InputBox>
+		</ItemBox>
 	);
 };
+
+export default AddTodo;

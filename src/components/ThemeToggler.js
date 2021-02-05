@@ -4,24 +4,15 @@ import IconSun from '../assets/icon-sun.svg';
 import IconMoon from '../assets/icon-moon.svg';
 import LightTheme from '../themes/light';
 import DarkTheme from '../themes/dark';
+import { ImageButton } from './ImageButton';
 
-export const ToggleButton = styled.button`
+export const ToggleButton = styled(ImageButton)`
 	width: 2rem;
 	height: 2rem;
-	background-color: transparent;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	display: inline-flex;
 
 	@media (min-width: 768px) {
 		width: 2.6rem;
 		height: 2.6rem;
-	}
-
-	> img {
-		display: block;
-		width: 100%;
 	}
 `;
 

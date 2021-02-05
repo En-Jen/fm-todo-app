@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { InputBox } from './AddTodo';
+import { ItemBox } from './ItemBox';
 
-const FilterButtonWrapper = styled(InputBox)`
+const FilterButtonWrapper = styled(ItemBox)`
 	justify-content: center;
 
 	@media (min-width: 768px) {

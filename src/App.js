@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './components/Header';
-import { AddTodo } from './components/AddTodo';
+import Main from './components/Main';
+import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import TodosFilter from './components/TodosFilter';
-import Main from './components/Main';
 import DarkTheme from './themes/dark';
 
 const GlobalStyle = createGlobalStyle`
@@ -76,8 +76,14 @@ const App = () => {
 	const [filteredTodos, setFilteredTodos] = useState([]);
 	const [theme, setTheme] = useState(DarkTheme);
 
+	// Run once when app starts to get todos in local storage
+	useEffect(() => {
+		getLocalTodos();
+	}, []);
+
 	// Run every time user adds another todo or selects a different filterOption
 	useEffect(() => {
+		saveLocalTodos();
 		filterHandler();
 	}, [todos, filterOption]);
 
@@ -94,6 +100,21 @@ const App = () => {
 			default:
 				setFilteredTodos(todos);
 				break;
+		}
+	};
+
+	// Save todos to local storage
+	const saveLocalTodos = () => {
+		localStorage.setItem('todos', JSON.stringify(todos));
+	};
+
+	// Get local storage when user refreshes page
+	const getLocalTodos = () => {
+		if (localStorage.getItem('todos') === null) {
+			localStorage.setItem('todos', JSON.stringify([]));
+		} else {
+			let todosLocal = JSON.parse(localStorage.getItem('todos'));
+			setTodos(todosLocal);
 		}
 	};
 

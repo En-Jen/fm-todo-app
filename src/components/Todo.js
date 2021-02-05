@@ -1,12 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { InputBox } from './AddTodo';
-// import { CircleCheckbox } from './CircleCheckbox';
+import { ItemBox } from './ItemBox';
 import IconCross from '../assets/icon-cross.svg';
-import { ToggleButton } from './ThemeToggler';
+import { ImageButton } from './ImageButton';
 import IconCheck from '../assets/icon-check.svg';
 
-const TodoWrapper = styled(InputBox)`
+const TodoWrapper = styled(ItemBox)`
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
@@ -72,15 +71,20 @@ const TodoText = styled.p`
 		`};
 `;
 
-const DeleteButton = styled(ToggleButton)`
+const DeleteButton = styled(ImageButton)`
 	width: 1.18rem;
 	height: 1.18rem;
 	margin-left: auto;
+	transition: transform var(--transition);
 
 	@media (min-width: 768px) {
 		width: 1.77rem;
 		height: 1.77rem;
 		display: none;
+	}
+
+	&:hover {
+		transform: scale(1.2);
 	}
 `;
 

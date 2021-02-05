@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FilterButtons, FilterButton } from './FilterButtons';
 import useViewport from '../hooks/useViewport';
-import { InputBox } from './AddTodo';
+import { ItemBox } from './ItemBox';
 
-const FilterWrapper = styled(InputBox)`
+const FilterWrapper = styled(ItemBox)`
 	border-radius: 0;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
