@@ -5,7 +5,7 @@ import IconCross from '../assets/icon-cross.svg';
 import { ImageButton } from './ImageButton';
 import IconCheck from '../assets/icon-check.svg';
 
-const TodoWrapper = styled(ItemBox)`
+const TodoItem = styled(ItemBox)`
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
@@ -112,7 +112,7 @@ export const Todo = ({ todos, setTodos, todo }) => {
 	};
 
 	return (
-		<TodoWrapper as="li">
+		<TodoItem as="li">
 			<CircleCheckbox
 				onClick={completeTodoHandler}
 				completed={todo.completed}
@@ -123,7 +123,7 @@ export const Todo = ({ todos, setTodos, todo }) => {
 			<DeleteButton className="btn-delete" onClick={deleteTodoHandler}>
 				<img src={IconCross} alt="Delete button" />
 			</DeleteButton>
-		</TodoWrapper>
+		</TodoItem>
 	);
 };
 
