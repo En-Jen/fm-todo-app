@@ -9,6 +9,7 @@ const TodoWrapper = styled(ItemBox)`
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
+	transition: border-bottom var(--transition);
 
 	&:first-child {
 		border-top-left-radius: 5px;
@@ -22,6 +23,7 @@ const TodoWrapper = styled(ItemBox)`
 
 const CircleCheckbox = styled.button`
 	width: 2rem;
+	min-width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
 	margin-right: 1.2rem;
@@ -52,6 +54,7 @@ const CircleCheckbox = styled.button`
 			border: none;
 		`};
 
+	/* Check icon */
 	> img {
 		display: block;
 		width: 0.725rem;
@@ -73,6 +76,7 @@ const TodoText = styled.p`
 
 const DeleteButton = styled(ImageButton)`
 	width: 1.18rem;
+	min-width: 1.18rem;
 	height: 1.18rem;
 	margin-left: auto;
 	transition: transform var(--transition);

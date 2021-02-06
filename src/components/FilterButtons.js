@@ -7,6 +7,10 @@ const FilterButtonWrapper = styled(ItemBox)`
 
 	@media (min-width: 768px) {
 		width: auto;
+		height: auto;
+		box-shadow: none;
+		border-radius: 0;
+		padding: 0;
 	}
 `;
 

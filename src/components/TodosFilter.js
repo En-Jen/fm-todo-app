@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FilterButtons, FilterButton } from './FilterButtons';
+import { FilterButtons } from './FilterButtons';
 import useViewport from '../hooks/useViewport';
 import { ItemBox } from './ItemBox';
 
@@ -11,11 +11,11 @@ const FilterWrapper = styled(ItemBox)`
 	justify-content: space-between;
 	margin-bottom: 2rem;
 
-	> p {
+	.items-left {
 		color: ${p => p.theme.filterText};
 	}
 
-	> button {
+	.btn-clear-completed {
 		color: ${p => p.theme.filterText};
 		border: none;
 		background-color: transparent;
@@ -30,12 +30,13 @@ const FilterWrapper = styled(ItemBox)`
 		}
 	}
 
-	> button:hover {
+	.btn-clear-completed:hover {
 		color: ${p => p.theme.filterTextHover};
 	}
 
 	@media (min-width: 768px) {
 		font-size: var(--font-size-secondary);
+		height: 5.5rem;
 	}
 `;
 
@@ -52,14 +53,21 @@ const TodosFilter = ({ todos, setTodos, filterOption, setFilterOption }) => {
 	return (
 		<>
 			<FilterWrapper>
-				<p>{uncompletedTodos.length} items left</p>
+				<p className="items-left">
+					{uncompletedTodos.length} items left
+				</p>
 				{width >= breakpoint && (
 					<FilterButtons
 						filterOption={filterOption}
 						setFilterOption={setFilterOption}
 					/>
 				)}
-				<button onClick={clearCompletedHandler}>Clear Completed</button>
+				<button
+					className="btn-clear-completed"
+					onClick={clearCompletedHandler}
+				>
+					Clear Completed
+				</button>
 			</FilterWrapper>
 			{width < breakpoint && (
 				<FilterButtons

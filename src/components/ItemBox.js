@@ -11,6 +11,7 @@ export const ItemBox = styled.div`
 	display: flex;
 	align-items: center;
 	padding: 2rem;
+	transition: background-color var(--transition);
 
 	@media (min-width: 768px) {
 		height: 6.4rem;

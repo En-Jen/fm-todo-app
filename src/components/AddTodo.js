@@ -4,6 +4,7 @@ import { ItemBox } from './ItemBox';
 
 const InputCircle = styled.div`
 	width: 2rem;
+	min-width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
 	margin-right: 1.2rem;
@@ -13,7 +14,7 @@ const InputCircle = styled.div`
 `;
 
 const TodoInput = styled.input`
-	width: 100%;
+	width: 90%;
 	background-color: ${p => p.theme.todoBg};
 	border: none;
 	outline: none;
@@ -21,6 +22,7 @@ const TodoInput = styled.input`
 	font-size: var(--font-size-primary);
 	color: ${p => p.theme.newTodoTypingText};
 	caret-color: ${p => p.theme.activeFilterText};
+	transition: background-color var(--transition);
 
 	&::placeholder {
 		color: ${p => p.theme.newTodoPlaceholderText};

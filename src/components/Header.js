@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
 	background-image: ${p => p.theme.bgImgMobile};
 	display: flex;
 	justify-content: center;
+	transition: background-image var(--transition);
 
 	@media (min-width: 768px) {
 		height: 30rem;
