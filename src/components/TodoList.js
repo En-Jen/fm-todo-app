@@ -17,7 +17,7 @@ const reorder = (list, startIndex, endIndex) => {
 	return result;
 };
 
-const getItemStyle = draggableStyle => ({
+const getItemStyle = (isDragging, draggableStyle) => ({
 	// some basic styles to make the items look a bit nicer
 	userSelect: 'none',
 	...draggableStyle,

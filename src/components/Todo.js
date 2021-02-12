@@ -9,7 +9,8 @@ const TodoItem = styled(ItemBox)`
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
-	transition: border-bottom var(--transition);
+	transition: border-bottom var(--transition),
+		background-color var(--transition);
 
 	&:first-child {
 		border-top-left-radius: 5px;

@@ -5,6 +5,7 @@ import Main from './components/Main';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import TodosFilter from './components/TodosFilter';
+import DragNDropMessage from './components/DragNDropMessage';
 import DarkTheme from './themes/dark';
 
 const GlobalStyle = createGlobalStyle`
@@ -141,6 +142,7 @@ const App = () => {
 					filterOption={filterOption}
 					setFilterOption={setFilterOption}
 				/>
+				<DragNDropMessage />
 			</Main>
 		</ThemeProvider>
 	);
