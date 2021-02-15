@@ -11,6 +11,12 @@ const InputCircle = styled.div`
 	border: ${p => p.theme.todoBorder};
 	outline: none;
 	background-color: transparent;
+
+	@media (min-width: 768px) {
+		width: 2.4rem;
+		min-width: 2.4rem;
+		height: 2.4rem;
+	}
 `;
 
 const TodoInput = styled.input`

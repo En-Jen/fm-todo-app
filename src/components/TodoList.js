@@ -4,7 +4,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 
 const TodoListContainer = styled.div`
-	margin-top: 2rem;
+	margin-top: 1.6rem;
 	width: 100%;
 	max-width: 54rem;
 `;

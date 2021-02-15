@@ -23,7 +23,7 @@ const HeaderWrapper = styled.div`
 	width: 100%;
 	height: 40px;
 	max-width: 54rem;
-	margin-top: 2.5rem;
+	margin-top: 1.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -36,9 +36,9 @@ const HeaderWrapper = styled.div`
 const Heading = styled.h1`
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 2rem;
+	font-size: 2.6rem;
 	font-weight: 700;
-	letter-spacing: 1.5rem;
+	letter-spacing: 1.1rem;
 
 	@media (min-width: 768px) {
 		font-size: 4rem;

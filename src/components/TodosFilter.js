@@ -9,7 +9,7 @@ const FilterWrapper = styled(ItemBox)`
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	justify-content: space-between;
-	margin-bottom: 2rem;
+	margin-bottom: 1.8rem;
 
 	.items-left {
 		color: ${p => p.theme.filterText};

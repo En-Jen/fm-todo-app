@@ -6,6 +6,7 @@ import { ImageButton } from './ImageButton';
 import IconCheck from '../assets/icon-check.svg';
 
 const TodoItem = styled(ItemBox)`
+	height: 5.3rem;
 	box-shadow: none;
 	border-radius: 0;
 	border-bottom: ${p => p.theme.todoBorder};
@@ -37,6 +38,12 @@ const CircleCheckbox = styled.button`
 	justify-content: center;
 	transition: border 0.2s ease, transform 0.2s ease;
 
+	@media (min-width: 768px) {
+		width: 2.4rem;
+		min-width: 2.4rem;
+		height: 2.4rem;
+	}
+
 	&:hover {
 		border: ${p => p.theme.circleBorderHover};
 		transform: scale(1.1);
@@ -60,6 +67,11 @@ const CircleCheckbox = styled.button`
 		display: block;
 		width: 0.725rem;
 		height: 0.5rem;
+
+		@media (min-width: 768px) {
+			width: 0.87rem;
+			height: 0.6rem;
+		}
 	}
 `;
 
