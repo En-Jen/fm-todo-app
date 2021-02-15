@@ -1,5 +1,7 @@
 # Frontend Mentor - Todo app
 
+## Live link: https://fm-todo-app-phi.vercel.app/
+
 ![Design preview for the Todo app coding challenge](./src/assets/design/desktop-preview.jpg)
 
 ## The challenge
@@ -21,6 +23,16 @@ Users should be able to:
 -   Toggle light and dark mode
 -   **Bonus**: Drag and drop to reorder items on the list
 
+## Installation
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+In the project directory, you can run: `npm start` to run the app in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 ## Features I added
 
 -   Drag and drop to reorder items on the list
@@ -38,9 +50,13 @@ Users should be able to:
 
 My focus for this project was to:
 
-1. Style a React app with styled-components for the first time.
-2. Utilized local storage for the first time.
-3. Implement color themes in a React app for the first time.
+- One of the overarching lessons for me in developing this app was project structure as it is the most complex React app I've worked on.
+- Style a React app with styled-components for the first time.
+- Utilized local storage for the first time.
+- Implement color themes in a React app for the first time.
+- A few things I could improve that I wasn't able to address before submission:
+    - The todo items flicker sometimes after dropping them in the drag and drop
+    - Improve accessibility practices
 
 ## My profile at Frontend Mentor
 
