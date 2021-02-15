@@ -13,6 +13,11 @@ const TodoItem = styled(ItemBox)`
 	transition: border-bottom var(--transition),
 		background-color var(--transition);
 
+	@media (min-width: 768px) {
+        height: 6.5rem;
+        padding: 2.4rem;
+	}
+
 	&:first-child {
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
@@ -42,6 +47,7 @@ const CircleCheckbox = styled.button`
 		width: 2.4rem;
 		min-width: 2.4rem;
 		height: 2.4rem;
+		margin-right: 2.6rem;
 	}
 
 	&:hover {

@@ -7,6 +7,10 @@ const TodoListContainer = styled.div`
 	margin-top: 1.6rem;
 	width: 100%;
 	max-width: 54rem;
+
+	@media (min-width: 768px) {
+        margin-top: 2.2rem;
+	}
 `;
 
 const reorder = (list, startIndex, endIndex) => {

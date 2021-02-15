@@ -16,6 +16,7 @@ const InputCircle = styled.div`
 		width: 2.4rem;
 		min-width: 2.4rem;
 		height: 2.4rem;
+		margin-right: 2.6rem;
 	}
 `;
 

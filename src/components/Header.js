@@ -29,7 +29,7 @@ const HeaderWrapper = styled.div`
 	justify-content: space-between;
 
 	@media (min-width: 768px) {
-		margin-top: 5rem;
+		margin-top: 5.4rem;
 	}
 `;
 
@@ -42,6 +42,7 @@ const Heading = styled.h1`
 
 	@media (min-width: 768px) {
 		font-size: 4rem;
+		letter-spacing: 1.5rem;
 	}
 `;
 

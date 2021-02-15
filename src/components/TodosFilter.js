@@ -11,6 +11,11 @@ const FilterWrapper = styled(ItemBox)`
 	justify-content: space-between;
 	margin-bottom: 1.8rem;
 
+	@media (min-width: 768px) {
+		font-size: var(--font-size-secondary);
+		height: 5.2rem;
+	}
+
 	.items-left {
 		color: ${p => p.theme.filterText};
 	}
@@ -32,11 +37,6 @@ const FilterWrapper = styled(ItemBox)`
 
 	.btn-clear-completed:hover {
 		color: ${p => p.theme.filterTextHover};
-	}
-
-	@media (min-width: 768px) {
-		font-size: var(--font-size-secondary);
-		height: 5.5rem;
 	}
 `;
 

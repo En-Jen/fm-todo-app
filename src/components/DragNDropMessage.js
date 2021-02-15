@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 const DragAndDropText = styled.div`
 	width: 100%;
-	margin-top: 4.3rem;
+    margin-top: 4.3rem;
+    
+    @media (min-width: 768px) {
+        margin-top: 3.2rem;
+	}
 
 	& .text {
 		color: ${p => p.theme.filterText};

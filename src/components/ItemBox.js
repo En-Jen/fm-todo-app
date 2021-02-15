@@ -14,6 +14,7 @@ export const ItemBox = styled.div`
 	transition: background-color var(--transition);
 
 	@media (min-width: 768px) {
-		height: 6.4rem;
+        height: 6.4rem;
+        padding: 2.4rem;
 	}
 `;
