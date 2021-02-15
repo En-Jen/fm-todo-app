@@ -4,7 +4,10 @@
 
 ## The challenge
 
-The challenge is to build out this todo app and get it looking as close to the design as possible.
+The challenge is to build out [this todo app](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) and get it looking as close to the design as possible.
+
+- Figma and Sketch files are provided
+- There is also a `style-guide.md` file, which contains information such as color palette and fonts.
 
 Users should be able to:
 
@@ -27,5 +30,18 @@ Users should be able to:
 
 -   React with hooks including a custom hook for viewport width
 -   styled-components
--   react-beautiful-dnd for drag and drop
+-   [react-beautiful-dnd library](https://github.com/atlassian/react-beautiful-dnd) for drag and drop
 -   Adobe XD for the design files
+-   [PerfectPixel](https://www.welldonecode.com/perfectpixel)
+
+## Learning outcomes
+
+My focus for this project was to:
+
+1. Style a React app with styled-components for the first time.
+2. Utilized local storage for the first time.
+3. Implement color themes in a React app for the first time.
+
+## My profile at Frontend Mentor
+
+[En-Jen](https://www.frontendmentor.io/profile/En-Jen)
