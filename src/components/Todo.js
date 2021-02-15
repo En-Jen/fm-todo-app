@@ -14,13 +14,8 @@ const TodoItem = styled(ItemBox)`
 		background-color var(--transition);
 
 	@media (min-width: 768px) {
-        height: 6.5rem;
-        padding: 2.4rem;
-	}
-
-	&:first-child {
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		height: 6.5rem;
+		padding: 2.4rem;
 	}
 
 	&:hover > .btn-delete {

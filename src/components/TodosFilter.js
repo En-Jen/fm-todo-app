@@ -54,7 +54,8 @@ const TodosFilter = ({ todos, setTodos, filterOption, setFilterOption }) => {
 		<>
 			<FilterWrapper>
 				<p className="items-left">
-					{uncompletedTodos.length} items left
+					{uncompletedTodos.length}{' '}
+					{uncompletedTodos.length > 1 ? 'items' : 'item'} left
 				</p>
 				{width >= breakpoint && (
 					<FilterButtons
