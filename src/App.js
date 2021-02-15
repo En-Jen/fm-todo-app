@@ -85,30 +85,31 @@ const App = () => {
 
 	// Run every time user adds another todo or selects a different filterOption
 	useEffect(() => {
+		// Save todos to local storage
+		const saveLocalTodos = () => {
+			localStorage.setItem('todos', JSON.stringify(todos));
+		};
 		saveLocalTodos();
+
+		const filterHandler = () => {
+			switch (filterOption) {
+				case 'active':
+					setFilteredTodos(
+						todos.filter(todo => todo.completed === false)
+					);
+					break;
+				case 'completed':
+					setFilteredTodos(
+						todos.filter(todo => todo.completed === true)
+					);
+					break;
+				default:
+					setFilteredTodos(todos);
+					break;
+			}
+		};
 		filterHandler();
 	}, [todos, filterOption]);
-
-	const filterHandler = () => {
-		switch (filterOption) {
-			case 'active':
-				setFilteredTodos(
-					todos.filter(todo => todo.completed === false)
-				);
-				break;
-			case 'completed':
-				setFilteredTodos(todos.filter(todo => todo.completed === true));
-				break;
-			default:
-				setFilteredTodos(todos);
-				break;
-		}
-	};
-
-	// Save todos to local storage
-	const saveLocalTodos = () => {
-		localStorage.setItem('todos', JSON.stringify(todos));
-	};
 
 	// Get local storage when user refreshes page
 	const getLocalTodos = () => {
