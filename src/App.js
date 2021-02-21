@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
 		width: 100vw;
 		background-color: ${p => p.theme.bodyBg};
 		transition: background-color var(--transition);
+		overflow-x: hidden;
 	}
 `;
 

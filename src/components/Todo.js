@@ -17,10 +17,6 @@ const TodoItem = styled(ItemBox)`
 		height: 6.5rem;
 		padding: 2.4rem;
 	}
-
-	&:hover > .btn-delete {
-		display: inline-flex;
-	}
 `;
 
 const CircleCheckbox = styled.button`
@@ -98,7 +94,6 @@ const DeleteButton = styled(ImageButton)`
 	@media (min-width: 768px) {
 		width: 1.77rem;
 		height: 1.77rem;
-		display: none;
 	}
 
 	&:hover {
