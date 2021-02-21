@@ -14,13 +14,12 @@ const FilterButtonWrapper = styled(ItemBox)`
 	}
 `;
 
-export const FilterButton = styled.button`
+const FilterButton = styled.button`
 	font-size: var(--font-size-secondary);
 	color: ${p => p.theme.filterText};
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	outline: none;
 	transition: color var(--transition);
 
 	${p =>
@@ -39,7 +38,7 @@ export const FilterButton = styled.button`
 	}
 `;
 
-export const FilterButtons = ({ filterOption, setFilterOption }) => {
+const FilterButtons = ({ filterOption, setFilterOption }) => {
 	const filterHandler = e => {
 		setFilterOption(e.target.dataset.option);
 	};
@@ -73,3 +72,5 @@ export const FilterButtons = ({ filterOption, setFilterOption }) => {
 		</FilterButtonWrapper>
 	);
 };
+
+export default FilterButtons;

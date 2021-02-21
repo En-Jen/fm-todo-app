@@ -16,7 +16,7 @@ const TodoItem = styled(ItemBox)`
 	@media (min-width: 768px) {
 		height: 6.5rem;
 		padding: 2.4rem;
-	}
+	}		
 `;
 
 const CircleCheckbox = styled.button`
@@ -27,7 +27,6 @@ const CircleCheckbox = styled.button`
 	margin-right: 1.2rem;
 	cursor: pointer;
 	border: ${p => p.theme.todoBorder};
-	outline: none;
 	background-color: transparent;
 	display: flex;
 	align-items: center;

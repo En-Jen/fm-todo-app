@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ItemBox } from './ItemBox';
 
@@ -8,9 +8,11 @@ const InputCircle = styled.div`
 	height: 2rem;
 	border-radius: 50%;
 	margin-right: 1.2rem;
-	border: ${p => p.theme.todoBorder};
-	outline: none;
+	border: ${p =>
+		p.isFocus ? p.theme.circleBorderHover : p.theme.todoBorder};
+	transform: ${p => (p.isFocus ? 'scale(1.1)' : 'scale(1)')};
 	background-color: transparent;
+	transition: border 0.2s ease, transform 0.2s ease;
 
 	@media (min-width: 768px) {
 		width: 2.4rem;
@@ -34,9 +36,15 @@ const TodoInput = styled.input`
 	&::placeholder {
 		color: ${p => p.theme.newTodoPlaceholderText};
 	}
+
+	&:focus .input-circle {
+		outline: 2px dotted red;
+	}
 `;
 
 const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
+	const [isFocus, setIsFocus] = useState(false);
+
 	const inputTextHandler = e => {
 		setInputText(e.target.value);
 	};
@@ -53,10 +61,16 @@ const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 		}
 	};
 
+	const onInputFocusHandler = () => setIsFocus(true);
+
+	const onInputBlurHandler = () => setIsFocus(false);
+
 	return (
 		<ItemBox>
-			<InputCircle />
+			<InputCircle isFocus={isFocus} />
 			<TodoInput
+				onFocus={onInputFocusHandler}
+				onBlur={onInputBlurHandler}
 				onKeyDown={submitTodoHandler}
 				onChange={inputTextHandler}
 				value={inputText}

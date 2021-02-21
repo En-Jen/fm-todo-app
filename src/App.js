@@ -23,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
 		--font-size-primary: 1.2rem;
 		--font-size-secondary: 1.4rem;
+		--color-outline: #3A7CFD;
+		--outline: 2px dotted var(--color-outline);
 		--transition: 0.3s ease-in-out;
 
 		@media (min-width: 768px) {
@@ -36,6 +38,13 @@ const GlobalStyle = createGlobalStyle`
 		background-color: ${p => p.theme.bodyBg};
 		transition: background-color var(--transition);
 		overflow-x: hidden;
+	}
+
+	a,
+	button {
+		&:focus {
+			outline: var(--outline);
+		}
 	}
 `;
 

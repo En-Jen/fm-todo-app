@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FilterButtons } from './FilterButtons';
+import FilterButtons from './FilterButtons';
 import useViewport from '../hooks/useViewport';
 import { ItemBox } from './ItemBox';
 
@@ -25,7 +25,7 @@ const FilterWrapper = styled(ItemBox)`
 		border: none;
 		background-color: transparent;
 		cursor: pointer;
-		outline: none;
+		/* outline: none; */
 		font-family: 'Josefin Sans', sans-serif;
 		font-size: var(--font-size-primary);
 		transition: color var(--transition);

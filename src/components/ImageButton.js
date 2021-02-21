@@ -5,7 +5,7 @@ export const ImageButton = styled.button`
     background-color: transparent;
 	cursor: pointer;
 	border: none;
-	outline: none;
+	/* outline: none; */
 	display: inline-flex;
 
 	> img {
