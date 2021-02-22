@@ -92,7 +92,7 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => {
 						ref={provided.innerRef}
 						{...provided.droppableProps}
 					>
-						<ul>{renderedTodos}</ul>
+						<div>{renderedTodos}</div>
 						{provided.placeholder}
 					</TodoListContainer>
 				)}

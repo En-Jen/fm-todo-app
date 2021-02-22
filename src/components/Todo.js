@@ -120,9 +120,10 @@ export const Todo = ({ todos, setTodos, todo }) => {
 	};
 
 	return (
-		<TodoItem as="li">
+		<TodoItem>
 			<CircleCheckbox
 				aria-label="Complete todo"
+				aria-pressed={todo.completed}
 				onClick={completeTodoHandler}
 				completed={todo.completed}
 			>
