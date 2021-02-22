@@ -68,7 +68,11 @@ const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 	return (
 		<ItemBox>
 			<InputCircle isFocus={isFocus} />
+			<label className="sr-only" htmlFor="newTodo">
+				Add new todo
+			</label>
 			<TodoInput
+				id="newTodo"
 				onFocus={onInputFocusHandler}
 				onBlur={onInputBlurHandler}
 				onKeyDown={submitTodoHandler}
@@ -76,6 +80,7 @@ const AddTodo = ({ inputText, setInputText, todos, setTodos }) => {
 				value={inputText}
 				type="text"
 				placeholder="Create a new todo..."
+				autocomplete="off"
 			/>
 		</ItemBox>
 	);

@@ -16,7 +16,7 @@ const TodoItem = styled(ItemBox)`
 	@media (min-width: 768px) {
 		height: 6.5rem;
 		padding: 2.4rem;
-	}		
+	}
 `;
 
 const CircleCheckbox = styled.button`
@@ -122,13 +122,18 @@ export const Todo = ({ todos, setTodos, todo }) => {
 	return (
 		<TodoItem as="li">
 			<CircleCheckbox
+				aria-label="Complete todo"
 				onClick={completeTodoHandler}
 				completed={todo.completed}
 			>
 				{todo.completed && <img src={IconCheck} alt="Check mark" />}
 			</CircleCheckbox>
 			<TodoText completed={todo.completed}>{todo.text}</TodoText>
-			<DeleteButton className="btn-delete" onClick={deleteTodoHandler}>
+			<DeleteButton
+				aria-label="Delete todo"
+				className="btn-delete"
+				onClick={deleteTodoHandler}
+			>
 				<img src={IconCross} alt="Delete button" />
 			</DeleteButton>
 		</TodoItem>
